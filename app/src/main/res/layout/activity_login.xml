@@ -53,10 +53,6 @@
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Passwordfield"
         android:layout_width="0dp"

@@ -1,9 +1,11 @@
 package com.sro.socialbird.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.sro.socialbird.R;
+import com.sro.socialbird.activity.LoginActivity;
+import com.sro.socialbird.activity.MainActivity;
 
 import java.util.Objects;
 
@@ -25,12 +29,22 @@ public class ProfileFragment extends Fragment {
 
     TextView nametv, emailtv, phonetv;
     ImageView img;
-
+    Button logout;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile,container,false);
         img = view.findViewById(R.id.imageView);
+        logout = view.findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), MainActivity.class));
+            }
+        });
+
+
         FirebaseDatabase.getInstance().getReference("users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).child("imageURL").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

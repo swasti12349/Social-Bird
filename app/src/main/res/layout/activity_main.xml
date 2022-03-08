@@ -30,8 +30,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileimg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/personimg"
         app:layout_constraintBottom_toTopOf="@id/Nmefield"
@@ -57,9 +57,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="30dp"
         android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Name"
             android:layout_width="match_parent"
-            android:layout_height="61dp">
+            android:layout_height="wrap_content">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,9 +79,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="30dp"
         android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,9 +101,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="30dp"
         android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,8 +122,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="Password"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +133,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="textPassword">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -141,22 +142,33 @@
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Passwordfield" />
 
     <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already registered?"
+        app:layout_constraintTop_toBottomOf="@+id/signup"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/signup"
+        app:layout_constraintRight_toRightOf="@+id/signup"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
         android:id="@+id/loginpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already Registered? Log In Here"
+        android:layout_marginTop="45dp"
+        android:text="Log In Here"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup" />
